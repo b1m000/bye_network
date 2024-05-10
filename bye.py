@@ -15,12 +15,10 @@ if len(sys.argv) < 3:
     sys.exit()
 
 def macG():
-    mac = [random.randint(0x00,0xff),
-           random.randint(0x00,0xff),
-           random.randint(0x00,0xff),
-           random.randint(0x00, 0xff),
-           random.randint(0x00, 0xff),
-           random.randint(0x00, 0xff)]
+    mac = []
+    for x in range(6):
+        mac.append(random.randint(0x00,0xff))
+    
     return ':'.join(map(lambda x: "%02x" % x, mac))
 
 
